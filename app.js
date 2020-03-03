@@ -27,7 +27,27 @@ connection.connect(function(err) {
           console.log('Erro ao realizar a consulta');
       }
   })
+  //Inserir algo no banco de dados
+/*connection.query("INSERT INTO users(nome, email) VALUES ('Kelly', 'kelly@joao.com.br')", function(err, result){
+if(!err){
+    console.log('Usuario cadastrado com sucesso');
+}else{
+    console.log('erro ao cadastrar o usuario');
+}
+})*/
 
+//Alterar algo no banco de dados
+connection.query("UPDATE users SET nome = 'Ronaldo' WHERE id = 1", function(err, result){
+if (!err) {
+    console.log('Usuario Editado com sucesso');
+}else{
+    console.log("Houve um erro.")
+}
+});
+
+
+
+// Rotas Express
 app.get("/", function(req, res){
     res.sendFile(__dirname + "/src/index.html");
 });
