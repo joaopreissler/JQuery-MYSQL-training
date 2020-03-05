@@ -34,7 +34,7 @@ if(!err){
 }else{
     console.log('erro ao cadastrar o usuario');
 }
-})*/
+})
 
 //Alterar algo no banco de dados
 connection.query("UPDATE users SET nome = 'Ronaldo' WHERE id = 1", function(err, result){
@@ -44,8 +44,15 @@ if (!err) {
     console.log("Houve um erro.")
 }
 });
-
-
+*/
+//Remover algo do banco de dados
+connection.query("DELETE FROM users WHERE id = 3", function(err, result){
+    if (!err) {
+        console.log('Usuario Removido com sucesso');
+    }else{
+        console.log("Houve um erro.")
+    }
+    });
 
 // Rotas Express
 app.get("/", function(req, res){
