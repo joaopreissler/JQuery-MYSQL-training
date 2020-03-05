@@ -54,6 +54,8 @@ connection.query("DELETE FROM users WHERE id = 3", function(err, result){
     }
     });
 
+
+
 // Rotas Express
 app.get("/", function(req, res){
     res.sendFile(__dirname + "/src/index.html");
